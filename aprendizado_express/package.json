@@ -1,0 +1,17 @@
+{
+  "name": "aprendizado_express",
+  "version": "1.0.0",
+  "author": "Leandro",
+  "description": "Aprendendo sobre express no curso da udemy no guia do programador!",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

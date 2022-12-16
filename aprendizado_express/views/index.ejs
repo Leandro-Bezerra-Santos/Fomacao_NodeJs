@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Aprendendo a apresentar variavéis do back-end no front</h1>
+    <p>Olá, <%= name %>, você tem <%= age %> anos de idade</p>
+
+    <p>"coloque uma / seu nome e /sua idade na url"</p>
+
+    <% if(msg) {%>
+        <h3>Mensagem de erro!</h3>
+    <%} else {%>
+        <h2>Success</h2> 
+    <%}%>
+
+    <% produts.forEach( (produts) => {%>
+        <%= produts.name %>
+        <%= produts.preco %>
+        </br>
+    <%});%>
+</body>
+</html>

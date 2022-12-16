@@ -1,40 +1,32 @@
-const express = require('express');
+const express = require("express");
+const app = express();
 
-const app = express(); // Iniciando o express e passando a sua inicialização para a constante
-const port = 2000
+app.set('view engine', 'ejs');//Dizendo para o express usar o EJS como view engine
 
+app.get('/:name?/:idade?', (request, response) => {
+    const { name, age} =  request.params;
+    const msg = false;
+    const produts = [
+        {
+            name: "Bolacha",
+            preco: 2.00,
+        },
+        {
+            name: "Sucrilhos",
+            preco: 12.50,
+        },
+        {
+            name: "Maionese",
+            preco: 7.00
+        }
+    ]
 
-app.get('/', (request, response) => {
-    const { color } = request.query;
-    if(color){
-        response.send(`a cor passada no query params é ${color}`)
-    }else{
-        response.send("Não tem query params passando ")
-    }
+    response.render('index', {
+        name,
+        age,
+        msg,
+        produts
+    });  
 })
 
-//Trabalhando com params opcionais
-app.get('/hello/:name?', (request, response) => {
-    const { name } = request.params;
-
-    if(name){
-        response.send(`Olá ${name} sejá bem-vindo`)
-    }else{
-
-        response.send("<h1>About US</h1>")
-    }
-})
-
-//Trabalhando com params
-app.get('/contact/:name', (request, response) => {
-    const { name } = request.params;
-    response.send(name);
-})
-
-app.listen(port, function(err){
-    if(err){
-        console.error(err)
-    }else{
-        console.log(`Serving initialized in success! http:localhost:${port}👌`)
-    }
-})
+app.listen(2323, () => console.log('Server in running 👌'));
